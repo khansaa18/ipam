@@ -1,0 +1,3 @@
+SubnetName,Subnet,SubnetDescription,SubnetIp,AssignedTo,IpDescription
+Test Subnet 2,10.0.0.0/24,Test subnet 2,10.0.0.3,Test Machine 2,Test Machine 2
+Test Subnet 2,10.0.0.0/24,Test subnet 3,10.0.0.4,Test Machine 3,Test Machine 3

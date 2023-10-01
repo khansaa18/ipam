@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block styles %}
+
+
+{% endblock styles%}
+
+
+{% block heading %}Subnet Calculator{% endblock heading %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Subnet Info
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Calculate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Calculated Results
+                </div>
+                <div class="card-body">
+                    <p>Network Address: {{ network.network_address }}</p>
+                    <p>Broadcast Address: {{ network.broadcast_address }}</p>
+                    <p>Usable IP Range: {{ network.network_address|add:"1" }} - {{ network.broadcast_address|add:"-1" }}</p>
+                    <p>Total Usable Hosts: {{ network.num_addresses|add:"-2" }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
