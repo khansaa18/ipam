@@ -5,99 +5,104 @@
 <head>
     <title>Login Page</title>
 
-   <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template-->
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-  <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
-  <!-- Custom styles for this template-->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/sb-admin-2.min.css'%}">
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sb-admin-2.min.css'%}">
 
-  <style>
-    body {
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
-  }
+    <style>
+        body {
+        background: #007bff;
+        background: linear-gradient(to right, #0062E6, #33AEFF);
+         background-image: url('{% static "img/6171704.jpg" %}');
+         background-size:     cover;                      /* <------ */
+         background-repeat:   no-repeat;
+         background-position: center center;
+      }
 
-  .btn-login {
-    font-size: 0.9rem;
-    letter-spacing: 0.05rem;
-    padding: 0.75rem 1rem;
-  }
+      .btn-login {
+        font-size: 0.9rem;
+        letter-spacing: 0.05rem;
+        padding: 0.75rem 1rem;
+      }
 
-  .btn-google {
-    color: white !important;
-    background-color: #ea4335;
-  }
+      .btn-google {
+        color: white !important;
+        background-color: #ea4335;
+      }
 
-  .btn-facebook {
-    color: white !important;
-    background-color: #3b5998;
-  }
-  </style>
+      .btn-facebook {
+        color: white !important;
+        background-color: #3b5998;
+      }
+    </style>
     <!-- Include any CSS or JS dependencies here -->
 </head>
 <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
 
 <body>
-  <div class="container">
+<div class="container">
     <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card border-0 shadow rounded-3 my-5">
-          <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
-<!--            <form>-->
-<!--              <div class="form-floating mb-3">-->
-<!--                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">-->
-<!--              </div>-->
-<!--              <div class="form-floating mb-3">-->
-<!--                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">-->
-<!--              </div>-->
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+                <div class="card-body p-4 p-sm-5">
+                    <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
+                    <!--            <form>-->
+                    <!--              <div class="form-floating mb-3">-->
+                    <!--                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">-->
+                    <!--              </div>-->
+                    <!--              <div class="form-floating mb-3">-->
+                    <!--                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">-->
+                    <!--              </div>-->
 
-<!--              <div class="form-check mb-3">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">-->
-<!--                <label class="form-check-label" for="rememberPasswordCheck">-->
-<!--                  Remember password-->
-<!--                </label>-->
-<!--              </div>-->
-<!--              <div class="d-grid">-->
-<!--                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign-->
-<!--                  in</button>-->
-<!--              </div>-->
-<!--              <hr class="my-4">-->
-<!--              <div class="d-grid mb-2">-->
-<!--              </div>-->
-<!--            </form>-->
-          <form method="post">
-    {% csrf_token %}
-    {{ loginform.as_p }}
-    <div class="d-grid">
-        <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign in</button>
-    </div>
-</form>
-{% if error_message %}
-<p class="text-danger">{{ error_message }}</p>
-{% endif %}
+                    <!--              <div class="form-check mb-3">-->
+                    <!--                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">-->
+                    <!--                <label class="form-check-label" for="rememberPasswordCheck">-->
+                    <!--                  Remember password-->
+                    <!--                </label>-->
+                    <!--              </div>-->
+                    <!--              <div class="d-grid">-->
+                    <!--                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign-->
+                    <!--                  in</button>-->
+                    <!--              </div>-->
+                    <!--              <hr class="my-4">-->
+                    <!--              <div class="d-grid mb-2">-->
+                    <!--              </div>-->
+                    <!--            </form>-->
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ loginform.as_p }}
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign in
+                            </button>
+                        </div>
+                    </form>
+                    {% if error_message %}
+                    <p class="text-danger">{{ error_message }}</p>
+                    {% endif %}
 
 
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 <!-- Bootstrap core JavaScript-->
-  <script src="{% static 'vendor/jquery/jquery.min.js'%} "></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'vendor/jquery/jquery.min.js'%} "></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js'%}"></script>
+<!-- Core plugin JavaScript-->
+<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js'%}"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="{% static 'js/sb-admin-2.min.js'%}"></script>
+<!-- Custom scripts for all pages-->
+<script src="{% static 'js/sb-admin-2.min.js'%}"></script>
 </body>
 </html>

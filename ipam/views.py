@@ -11,12 +11,6 @@ from .models import Subnet, SubnetIpAddress
 import ipaddress
 
 
-def index(request):
-    if 'username' not in request.session:
-        return redirect('login')
-
-    return render(request, 'dashboard/dashboard.html')
-
 
 def subnet_form(request, subnetname=None):
     if 'username' not in request.session:
@@ -106,7 +100,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 request.session['username'] = user.username
-                return redirect('/home')  # Replace 'homepage' with your homepage URL name
+                return redirect('/viewSubnetIps')  # Replace 'homepage' with your homepage URL name
             else:
                 error_message = "Invalid username or password"
     else:

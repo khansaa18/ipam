@@ -4,7 +4,6 @@ from .views import *
 urlpatterns = [
     path('', login_view, name='login'),
     path('logout', logout_view, name='logout'),
-    path('home', index, name='home'),
     path('subnet', subnet_form, name='subnetform'),
     path('actionUrl/<str:subnetname>/', subnet_form,name='actionUrl'),
     path('deleteSubnet/<str:id>/', delete_subnet, name='deleteSubnet'),
