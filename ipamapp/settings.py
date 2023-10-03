@@ -24,12 +24,12 @@ SECRET_KEY = 'django-insecure-s04-p3pyx2i)#e57ri2xghf1qlwutp2s_90yhyf#y1it3f(gev
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-# CSRF_TRUSTED_ORIGINS = [
-#    'https://myipam.azurewebsites.net'
-# ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://myipam.azurewebsites.net'
+]
 
 # Application definition
 
