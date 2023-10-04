@@ -4,4 +4,3 @@ pip~=23.2.1
 asgiref~=3.7.2
 sqlparse~=0.4.4
 setuptools~=65.5.0
-whitenoise
